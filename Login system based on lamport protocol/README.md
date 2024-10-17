@@ -1,4 +1,4 @@
-### README for Web-Based Client-Server Login System Using Lamport Protocol
+### Web-Based Client-Server Login System Using Lamport Protocol
 
 This project implements a web-based client-server login system, built using the Django framework, that uses the Lamport protocol for secure authentication. The system includes two primary functionalities: user signup and login. The security model is based on the Lamport scheme, where the number of logins a user can perform is determined by the `n_value`, which is set to 5 by default.
 
