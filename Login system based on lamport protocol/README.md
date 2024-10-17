@@ -2,16 +2,22 @@
 
 This project implements a web-based client-server login system, built using the Django framework, that uses the Lamport protocol for secure authentication. The system includes two primary functionalities: user signup and login. The security model is based on the Lamport scheme, where the number of logins a user can perform is determined by the `n_value`, which is set to 5 by default.
 
+<img src="pics/landing.png" width="500">
+
 ### Features
 
 1. **Signup:**
    - Upon signup, the system generates a hashed password and stores it in the database. The password is hashed multiple times (equal to `n_value`), ensuring that the Lamport protocol is followed.
    - If the username is already registered, the user will be notified with an error message. Otherwise, the signup is successful, and a confirmation message is displayed.
 
+<img src="pics/sign%20up.png" width="500">
+
 2. **Login:**
    - During login, the password is hashed multiple times, and each successful login reduces the `n_value`. Once `n_value` reaches zero, the user is no longer allowed to log in.
    - If the login is successful, the system updates the hash and `n_value` in the database for future logins.
    - After five unsuccessful login attempts, the user is locked out, as the `n_value` will be exhausted.
+
+<img src="pics/num%20of%20valid%20ended.png" width="250">
 
 ### Usage
 
